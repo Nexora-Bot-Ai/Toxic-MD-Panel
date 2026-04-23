@@ -27,7 +27,7 @@ const alive = async (m, Matrix) => {
     await m.React(textEmoji);
 
     const message = `◈━━━━━━━━━━━━━━━━◈
-│❒ Arslan-MD alive - ${timeString}! ${reactionEmoji}
+│❒ NEXORA-BOT alive - ${timeString}! ${reactionEmoji}
 ◈━━━━━━━━━━━━━━━━◈`;
 
     await Matrix.sendMessage(
@@ -38,13 +38,13 @@ const alive = async (m, Matrix) => {
           mentionedJid: [m.sender],
           externalAdReply: {
             showAdAttribution: true,
-            title: `Arslan-MD Status`,
-            body: `Check Arslan-MD's uptime!`,
-            sourceUrl: "https://github.com/Arslan-MD/Arslan-XMD",
+            title: `NEXORA-BOT Status`,
+            body: `Check NEXORA-BOT's uptime!`,
+            sourceUrl: "https://github.com/Nexora-Bot-Ai/NEXORA-BOT",
             mediaType: 1,
             renderLargerThumbnail: true,
-            mediaUrl: "https://files.catbox.moe/16i1l7.jpg",
-            thumbnailUrl: "https://files.catbox.moe/16i1l7.jpg",
+            mediaUrl: "https://i.ibb.co/JRvZBgDK/temp.jpg",
+            thumbnailUrl: "https://i.ibb.co/JRvZBgDK/temp.jpg",
           },
         },
       },
@@ -54,7 +54,7 @@ const alive = async (m, Matrix) => {
     console.error(`❌ Alive error: ${error.message}`);
     await Matrix.sendMessage(m.from, {
       text: `◈━━━━━━━━━━━━━━━━◈
-│❒ *Arslan-MD* hit a snag! Error: ${error.message || "Failed to check status"} 😡
+│❒ *NEXORA-BOT* hit a snag! Error: ${error.message || "Failed to check status"} 😡
 ◈━━━━━━━━━━━━━━━━◈`,
     }, { quoted: m });
   }
