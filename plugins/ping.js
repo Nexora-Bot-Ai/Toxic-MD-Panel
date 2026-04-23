@@ -27,7 +27,7 @@ const ping = async (m, Matrix) => {
       const responseTime = (end - start) / 1000;
 
       const message = `◈━━━━━━━━━━━━━━━━◈
-│❒ Arslan-XMD speed - ${responseTime.toFixed(1)}s! ${reactionEmoji}
+│❒ NEXORA-BOT speed - ${responseTime.toFixed(1)}s! ${reactionEmoji}
 ◈━━━━━━━━━━━━━━━━◈`;
 
       await Matrix.sendMessage(m.from, {
@@ -36,13 +36,13 @@ const ping = async (m, Matrix) => {
           mentionedJid: [m.sender],
           externalAdReply: {
             showAdAttribution: true, // Marks as an ad
-            title: `Arslan-XMD Speed`,
+            title: `NEXORA-BOT Speed`,
             body: `Checking your connection speed with Arslan-XMD!`,
-            sourceUrl: "https://github.com/Arslan-MD/Arslan-XMD",
+            sourceUrl: "https://github.com/Nexora-Bot-Ai/NEXORA-BOT",
             mediaType: 1,
             renderLargerThumbnail: true,
-            mediaUrl: "https://files.catbox.moe/16i1l7.jpg",
-            thumbnailUrl: "https://files.catbox.moe/16i1l7.jpg",
+            mediaUrl: "https://i.ibb.co/JRvZBgDK/temp.jpg",
+            thumbnailUrl: "https://i.ibb.co/JRvZBgDK/temp.jpg",
           },
         },
       }, { quoted: m });
@@ -51,7 +51,7 @@ const ping = async (m, Matrix) => {
     console.error(`❌ Ping error: ${error.message}`);
     await Matrix.sendMessage(m.from, {
       text: `◈━━━━━━━━━━━━━━━━◈
-│❒ *Arslan-XMD* hit a snag! Error: ${error.message || "Failed to check speed"} 😡
+│❒ *NEXORA-BOT* hit a snag! Error: ${error.message || "Failed to check speed"} 😡
 ◈━━━━━━━━━━━━━━━━◈`,
     }, { quoted: m });
   }
