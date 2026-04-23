@@ -1,15 +1,15 @@
 {
-  "name": "Arslan-MD",
+  "name": "NEXORA-BOT",
   "version": "10.8.1",
-  "description": "Arslan-XMD multi device whatsapp bot created by Arslan-MD",
+  "description": "nexora-bot multi device whatsapp bot created by SOURAJIT",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name Arslan-XMD",
-    "stop": "pm2 stop Arslan-XMD",
-    "restart": "pm2 restart Arslan-XMD"
+    "start": "pm2 start index.js --deep-monitoring --attach --name Nexora-Bot",
+    "stop": "pm2 stop Nexora-Bot",
+    "restart": "pm2 restart NEXORA-BOT"
   },
-  "keywords": ["Arslan-XMD", "whatsapp-bot", "whatsapp md bot"],
+  "keywords": ["NEXORA-BOT", "whatsapp-bot", "whatsapp md bot"],
   "author": "Arslan-MD",
   "license": "ISC",
   "dependencies": {
