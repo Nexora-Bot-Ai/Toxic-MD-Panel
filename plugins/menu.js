@@ -46,7 +46,7 @@ function toFancyFont(text, isUpperCase = false) {
 
 // Image fetch utility
 async function fetchMenuImage() {
-  const imageUrl = "https://files.catbox.moe/16i1l7.jpg";
+  const imageUrl = "https://i.ibb.co/JRvZBgDK/temp.jpg";
   try {
     const response = await axios.get(imageUrl, { responseType: "arraybuffer" });
     return Buffer.from(response.data, "binary");
@@ -75,9 +75,9 @@ const menu = async (m, Matrix) => {
       const menuImage = await fetchMenuImage();
       const mainMenu = `
 ◈━━━━━━━━━━━━━━━━◈
-│❒ ${toFancyFont("Arslan-MD")} Command Menu ⚠
+│❒ ${toFancyFont("NEXORA-BOT")} Command Menu ⚠
 │
-│ 🤖 *${toFancyFont("Bot")}*: ${toFancyFont("Arslan-MD")}
+│ 🤖 *${toFancyFont("Bot")}*: ${toFancyFont("NEXORA-BOT")}
 │ 📋 *${toFancyFont("Total Commands")}*: ${totalCommands}
 │ 🔣 *${toFancyFont("Prefix")}*: ${prefix}
 │ 🌐 *${toFancyFont("Mode")}*: ${mode}
@@ -86,13 +86,13 @@ const menu = async (m, Matrix) => {
 
 ${pushwish} @${m.pushName || 'User'}! Tap a button to select a menu category:
 
-> Pσɯҽɾҽԃ Ⴆყ ᴀʀꜱʟᴀɴ-ɱԃȥ
+> Pσɯҽɾҽԃ Ⴆყ SOURAJIT
 `;
 
       const message = {
         text: mainMenu,
-        footer: "Pσɯҽɾҽԃ Ⴆყ ᴀʀꜱʟᴀɴ-ɱԃȥ",
-        title: `${toFancyFont("Arslan-MD")} Menu`,
+        footer: "Pσɯҽɾҽԃ Ⴆყ SOURAJIT",
+        title: `${toFancyFont("NEXORA-BOT")} Menu`,
         buttons: [
           { buttonId: `${prefix}download-menu`, buttonText: { displayText: "📥 Download" }, type: 1 },
           { buttonId: `${prefix}converter-menu`, buttonText: { displayText: "🔄 Converter" }, type: 1 },
@@ -108,10 +108,10 @@ ${pushwish} @${m.pushName || 'User'}! Tap a button to select a menu category:
         mentions: [m.sender],
         contextInfo: {
           externalAdReply: {
-            title: `${toFancyFont("Arslan-MD")} Menu`,
-            body: `${pushwish} Explore Arslan-MD's features!`,
+            title: `${toFancyFont("NEXORA-BOT")} Menu`,
+            body: `${pushwish} Explore NEXORA-BOT's features!`,
             thumbnail: menuImage || Buffer.alloc(0),
-            sourceUrl: "https://github.com/Arslan-MD/Arslan-XMD",
+            sourceUrl: "https://github.com/Nexora-Bot-Ai/NEXORA-BOT",
             mediaType: 1
           }
         }
@@ -325,7 +325,7 @@ ${menuResponse}
           mentionedJid: [m.sender],
           externalAdReply: {
             title: `${toFancyFont("Arslan-MD")} ${toFancyFont(menuTitle)}`,
-            body: `Explore Arslan-MD's ${menuTitle.toLowerCase()} commands!`,
+            body: `Explore NEXORA-BOT ${menuTitle.toLowerCase()} commands!`,
             sourceUrl: "https://github.com/Arslan-MD/Arslan-XMD",
             mediaType: 1
           }
@@ -336,7 +336,7 @@ ${menuResponse}
     console.error(`❌ Menu error: ${error.message}`);
     await Matrix.sendMessage(m.from, {
       text: `◈━━━━━━━━━━━━━━━━◈
-│❒ *Arslan-MD* hit a snag! Error: ${error.message || "Failed to load menu"} 😡
+│❒ *NEXORA-BOT* hit a snag! Error: ${error.message || "Failed to load menu"} 😡
 ◈━━━━━━━━━━━━━━━━◈`,
     }, { quoted: m });
   }
