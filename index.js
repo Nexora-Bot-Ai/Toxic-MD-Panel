@@ -69,7 +69,7 @@ class SessionManager {
 
 Please set your session ID in config.cjs:
 1. Open config.cjs file
-2. Set SESSION_ID: "ARSLAN-MD~your_base64_string"
+2. Set SESSION_ID: "NEXORA-BOT~your_base64_string"
 3. Save and restart bot
       `));
       return false;
@@ -81,7 +81,7 @@ Please set your session ID in config.cjs:
       base64Creds = this.extractBase64(sessionId);
       console.log(chalk.green(`
 ╔══════════════════════════════════╗
-║   ✅ ARSLAN-MD Format Detected   ║
+║   ✅ NEXORA-BOT Format Detected   ║
 ╚══════════════════════════════════╝
       `));
     } else {
@@ -109,7 +109,7 @@ Please set your session ID in config.cjs:
 ║      ✅ Session Loaded          ║
 ╚══════════════════════════════════╝
 • Source: config.cjs
-• Format: ${this.hasArslanPrefix(sessionId) ? "ARSLAN-MD~" : "Plain Base64"}
+• Format: ${this.hasArslanPrefix(sessionId) ? "NEXORA-BOT~" : "Plain Base64"}
 • Size: ${decodedBuffer.length} bytes
 • Saved to: ${this.credsPath}
       `));
@@ -138,15 +138,15 @@ Please check your config.cjs file.
   getSessionInfo() {
     const sessionId = this.config.SESSION_ID;
     
-    if (!sessionId || sessionId === "ARSLAN-MD~YOUR_BASE64_SESSION_STRING_HERE") {
+    if (!sessionId || sessionId === "NEXORA-BOT~YOUR_BASE64_SESSION_STRING_HERE") {
       return { configured: false };
     }
     
     return {
       configured: true,
-      format: this.hasArslanPrefix(sessionId) ? "ARSLAN-MD~" : "Plain",
+      format: this.hasNexoraPrefix(sessionId) ? "NEXORA-BOT~" : "Plain",
       length: sessionId.length,
-      prefix: this.hasArslanPrefix(sessionId) ? "Yes" : "No",
+      prefix: this.hasNexoraPrefix(sessionId) ? "Yes" : "No",
       source: "config.cjs"
     };
   }
@@ -154,7 +154,7 @@ Please check your config.cjs file.
 
 // Get greeting based on time
 function getGreeting() {
-  const hour = DateTime.now().setZone("Asia/Karachi").hour;
+  const hour = DateTime.now().setZone("Asia/Kolkata").hour;
   if (hour >= 5 && hour < 12) return "Good Morning! 🌄";
   if (hour >= 12 && hour < 17) return "Good Afternoon! 🌅";
   if (hour >= 17 && hour < 21) return "Good Evening! 🌃";
@@ -163,7 +163,7 @@ function getGreeting() {
 
 // Get current time
 function getCurrentTime() {
-  return DateTime.now().setZone("Asia/Karachi").toLocaleString(DateTime.TIME_SIMPLE);
+  return DateTime.now().setZone("Asia/Kolkata").toLocaleString(DateTime.TIME_SIMPLE);
 }
 
 // Status reply messages
@@ -179,7 +179,7 @@ async function start() {
   try {
     console.log(chalk.cyan(`
 ╔══════════════════════════════════╗
-║       🚀 Arslan-XMD BOT            ║
+║       🚀 NEXORA-BOT            ║
 ║     Config.cjs Session System    ║
 ╚══════════════════════════════════╝
     `));
@@ -189,7 +189,7 @@ async function start() {
 ╔══════════════════════════════════╗
 ║        📋 Bot Configuration      ║
 ╚══════════════════════════════════╝
-• Bot Name: ${config.BOT_NAME || "Arslan-XMD"}
+• Bot Name: ${config.BOT_NAME || "NEXORA-BOT"}
 • Prefix: ${config.PREFIX}
 • Mode: ${config.MODE}
 • Owner: ${config.OWNER_NAME}
@@ -297,9 +297,9 @@ Please scan the QR code to login...
         const firstMessage = [
             `◈━━━━━━━━━━━━━━━━◈`,
             `│❒ *${getGreeting()}*`,
-            `│❒ Welcome to *Arslan-XMD*! You're now connected.`,
+            `│❒ Welcome to *NEXORA-BOT*! You're now connected.`,
             ``,
-            `✨ *Bot Name*: Arslan-XMD`,
+            `✨ *Bot Name*: NEXORA-BOT`,
             `🔧 *Mode*: ${config.MODE || "public"}`,
             `➡️ *Prefix*: ${prefix}`,
             `🕒 *Time*: ${getCurrentTime()}`,
@@ -318,14 +318,14 @@ Please scan the QR code to login...
 
           await Matrix.sendMessage(Matrix.user.id, {
             text: firstMessage,
-            footer: `Powered by Arslan-MD`,
+            footer: `Powered by NEXORA-BOT`,
             viewOnce: true,
             contextInfo: {
               externalAdReply: {
                 showAdAttribution: false,
-                title: "Arslan-XMD",
+                title: "NEXORA-BOT",
                 body: `Bot initialized successfully.`,
-                sourceUrl: `https://github.com/Arslan-MD/Arslan-XMD`,
+                sourceUrl: `https://github.com/Nexora-Bot-Ai/NEXORA-BOT`,
                 mediaType: 1,
                 renderLargerThumbnail: true,
               },
@@ -334,7 +334,7 @@ Please scan the QR code to login...
 
           await Matrix.sendMessage(Matrix.user.id, {
             text: secondMessage,
-            footer: `Powered by Arslan-MD`,
+            footer: `Powered by NEXORA-BOT`,
             buttons: [
               {
                 buttonId: `${prefix}menu`,
@@ -347,9 +347,9 @@ Please scan the QR code to login...
             contextInfo: {
               externalAdReply: {
                 showAdAttribution: false,
-                title: "Arslan-XMD",
+                title: "NEXORA-BOT",
                 body: `Select to proceed.`,
-                sourceUrl: `https://github.com/Arslan-MD/Arslan-XMD`,
+                sourceUrl: `https://github.com/Nexora-Bot-Ai/NEXORA-BOT`,
                 mediaType: 1,
                 renderLargerThumbnail: true,
               },
@@ -360,7 +360,7 @@ Please scan the QR code to login...
         }
 
         console.log(chalk.green(`◈━━━━━━━━━━━━━━━━◈
-│❒ Arslan-MD connected
+│❒ NEXORA-BOT connected
 ◈━━━━━━━━━━━━━━━━◈  
 • User: ${Matrix.user.id}
 • Platform: WhatsApp
