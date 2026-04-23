@@ -48,7 +48,7 @@ const menu = async (m, Matrix) => {
 
     const mode = config.MODE === "public" ? "public" : "private";
     const str = `◈━━━━━━━━━━━━━━━━◈
-│❒ *Arslan-XMD* Menu 🔥
+│❒ *NEXORA-BOT* Menu 🔥
 │❒ 👑 *Owner*: ${config.OWNER_NAME}
 │❒ 🤖 *Bot*: ${config.BOT_NAME}
 │❒ ⚙️ *Mode*: ${mode}
@@ -141,7 +141,7 @@ const menu = async (m, Matrix) => {
           isForwarded: true,
           forwardedNewsletterMessageInfo: {
             newsletterJid: "120363348739987203@newsletter",
-            newsletterName: "Arslan-XMD",
+            newsletterName: "NEXORA-BOT",
             serverMessageId: 143,
           },
         },
@@ -162,7 +162,7 @@ const menu = async (m, Matrix) => {
     console.error(`❌ Menu error: ${error.message}`);
     await Matrix.sendMessage(m.from, {
       text: `◈━━━━━━━━━━━━━━━━◈
-│❒ *Arslan-XMD* hit a snag, fam! Try again! 😈
+│❒ *NEXORA-BOT* hit a snag, fam! Try again! 😈
 ◈━━━━━━━━━━━━━━━━◈`,
     }, { quoted: m });
   }
